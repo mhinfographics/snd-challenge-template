@@ -10,13 +10,14 @@ body{
 }
 header{
     width: 100%;
-    padding: 30px 0;
+    padding: 20px 0 0 0;
     box-sizing: border-box;
     text-align: center;
-    background-image: url(../images/icon.svg);
-    background-repeat: no-repeat;
-    background-position: 50% 0%;
-    background-size: 25px;
+}
+header .header-logo{
+    width: 100%;
+    max-width: 150px;
+    margin: 0 auto 10px auto;
 }
 header h5{
     font-weight: 400;
@@ -115,7 +116,7 @@ a, a:visited, a:hover, a:active{
         color: var(--SND-turquoise);
 }
 footer{
-    margin-top: 150px;
+    margin-top: 200px;
     padding-bottom: 35px;
     width: 100%;
     box-sizing: border-box;
@@ -186,6 +187,12 @@ footer ul li{
     margin: 0 10px;
 }
 
+footer .challenge-logo{
+    width: 100%;
+    max-width: 415px;
+    margin: 0;
+    opacity: 0.15;
+}
 /* mobile queries */
 @media (max-width: 768px){
     h1{
