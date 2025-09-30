@@ -10,12 +10,7 @@ function loadSetupAndLanguage() {
                 return;
             }
             const setup = Array.isArray(setupData) ? setupData[0] : setupData;
-            // Update meta and lang attributes in DOM if needed
-            document.documentElement.lang = setup.language || 'en';
-            const metaLang = document.querySelector('meta[http-equiv="Content-Language"]');
-            if (metaLang) {
-                metaLang.setAttribute('content', setup.language || 'en');
-            }
+            // ...existing code...
             fetch('data/languaje.json')
                 .then(response => response.json())
                 .then(langData => {
@@ -30,17 +25,6 @@ function loadSetupAndLanguage() {
                     }
                 })
                 .finally(() => {
-                    // Replace [+username] in DOM if present (for canonical/meta tags)
-                    // This only works for tags present in the DOM
-                    const username = setup.user || '';
-                    document.querySelectorAll('link[rel="canonical"], meta[property="og:url"], meta[property="og:image"], meta[property="twitter:url"], meta[name="image"], meta[name="twitter:image"], meta[property="twitter:domain"]').forEach(el => {
-                        if (el.hasAttribute('href')) {
-                            el.href = el.href.replace('[+username]', username);
-                        }
-                        if (el.hasAttribute('content')) {
-                            el.content = el.content.replace('[+username]', username);
-                        }
-                    });
                     addcontent();
                 });
         })
