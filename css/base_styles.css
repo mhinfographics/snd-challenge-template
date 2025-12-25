@@ -112,6 +112,15 @@ h3{
 .graphic-wrapper p{
     font-family: var(--fontSans) !important;
 }
+.frames-wrapper, .embed-wrapper{
+    margin: 0 auto;
+}
+.embed-wrapper{position: relative;}
+.embed-wrapper .g-credit{
+    padding-left: 10px;
+    margin: 0 auto;
+    max-width: 630px;
+}
 a, a:visited, a:hover, a:active{
         color: var(--SND-turquoise);
 }

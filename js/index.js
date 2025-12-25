@@ -220,6 +220,77 @@ function addcontent() {
                         container.appendChild(wrapper);
                         lastHeadlineWrapper = null;
                         break;
+                    case 'iframe':
+                        wrapper = document.createElement('div');
+                        wrapper.classList.add('frames-wrapper');
+                        wrapper.innerHTML = item.content;
+                        if (item.max_size && item.max_size !== 'body') {
+                            wrapper.style.maxWidth = item.max_size;
+                        } else if (item.max_size === 'body') {
+                            wrapper.classList.add('body-size');
+                        }
+                        // Add credit paragraph if present
+                        if (item.credit) {
+                            const creditEl = document.createElement('p');
+                            creditEl.innerHTML = item.credit;
+                            creditEl.className = 'g-credit';
+                            wrapper.appendChild(creditEl);
+                        }
+                        container.appendChild(wrapper);
+                        lastHeadlineWrapper = null;
+                        break;
+                    case 'embed':
+                        wrapper = document.createElement('div');
+                        wrapper.className = 'embed-wrapper';
+                        if (item.max_size && item.max_size !== 'body') {
+                            wrapper.style.maxWidth = item.max_size + 'px';
+                        } else if (item.max_size === 'body') {
+                            wrapper.className += ' media-size';
+                        }
+                        fetch(`embeds/${item.content}/index.html`)
+                            .then(response => response.text())
+                            .then(html => {
+                                const parser = new DOMParser();
+                                const doc = parser.parseFromString(html, 'text/html');
+
+                                // Append styles
+                                doc.querySelectorAll('head > style').forEach(style => {
+                                    wrapper.appendChild(style.cloneNode(true));
+                                });
+
+                                // Append body content
+                                const bodyContent = doc.body.innerHTML;
+                                const tempDiv = document.createElement('div');
+                                tempDiv.innerHTML = bodyContent;
+                                Array.from(tempDiv.children).forEach(child => {
+                                    if (child.tagName.toLowerCase() !== 'script') {
+                                        wrapper.appendChild(child);
+                                    }
+                                });
+
+                                // Create and append scripts to execute them
+                                doc.querySelectorAll('body > script').forEach(oldScript => {
+                                    const newScript = document.createElement('script');
+                                    Array.from(oldScript.attributes).forEach(attr => {
+                                        newScript.setAttribute(attr.name, attr.value);
+                                    });
+                                    newScript.textContent = oldScript.textContent;
+                                    document.body.appendChild(newScript);
+                                });
+
+                                if (item.credit) {
+                                    const creditEl = document.createElement('p');
+                                    creditEl.innerHTML = item.credit;
+                                    creditEl.className = 'g-credit';
+                                    wrapper.appendChild(creditEl);
+                                }
+                            })
+                            .catch(error => {
+                                wrapper.innerHTML = '<p>Error loading embed.</p>';
+                            });
+                        container.appendChild(wrapper);
+                        lastHeadlineWrapper = null;
+                        break;    
                     default:
                         lastHeadlineWrapper = null;
                         break;
