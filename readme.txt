@@ -104,7 +104,7 @@ per column:
 
 #### Col 1. type:
 Defines the module to be added to the page, it could be 
-<code>graphic</code>, <code>text</code>, <code>subhead</code>, <code>video</code>, <code>iframe</code>, <code>embed</code> or <code>photo</code>.
+graphic, text, subhead, video, iframe, embed or photo.
 You can use as many as you need of either of these.
 
 The extra fields headline, bylines and university are 
