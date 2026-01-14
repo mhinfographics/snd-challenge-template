@@ -3,26 +3,26 @@
 ## SET UP
 Open the file named setup.json 
 type your Github acount name replacing
-"your_github_username"
+*your_github_username*
 
 set your language:
-"en" for English
-"es" for Spanish
+*en* for English
+*es* for Spanish
 or whatever else language your content will be in.
 
 
 ## ADDING YOUR CONTENT
-Use the file named "project.json" to add content to your project.
-Find it at "data/project.json"
+Use the file named *project.json* to add content to your project.
+Find it at *data/project.json*
 
-If the file <b>project.json</b> is empty, the script would 
-take an example from the file named "demo.json" 
+If the file *project.json* is empty, the script would 
+take an example from the file named *demo.json* 
 That's just as an example of how to add text, 
 videos, graphics, photos, iframes or any other free html to your project.
 Don't worry about it, once you add your content, the script
 will ignore the demo file.
 
-I recommend to write <b>project.json</b> file directly
+I recommend to write *project.json* file directly
 adding something similar to the demo but with your own
 content.
 
@@ -30,15 +30,15 @@ If you are not familiar with the json structure, you
 can convert it from a csv, there's an example in the help directory.
 
 
-::::::::::::::::::: Styles 
-Use the file "custom_styles.css" to add any additional
+### Styles 
+Use the file *custom_styles.css* to add any additional
 styles to your project. Font styles are managed
-in "base_fonts.css" importing asset from google fonts.
+in *base_fonts.css* importing asset from google fonts.
 
 You can find all the style in the directory css/ if you
 need to adjust things or add additional styles.
 
-Try to avoid changes in "base_styles.css"
+Try to avoid changes in *base_styles.css*
 to keep the project working properly, but you are the owner
 of this project.
 
@@ -46,10 +46,10 @@ of this project.
 ## NEED HELP?
 
 If you run into trouble filling out stuff
-I have left a excel document called "help.xlsx"
-or "help.csv" if you can't open the excel file.
+I have left a excel document called *help.xlsx*
+or *help.csv* if you can't open the excel file.
 that would serve as template. Find the file in the
-"help" directory: "data/help/help.xlsx"
+*help* directory: *data/help/help.xlsx*
 
 Follow the steps below 
 to create a formatted json file to build-up
@@ -70,14 +70,14 @@ https://shancarter.github.io/mr-data-converter/
 
 ### 3.
 From the dropdown menu
-use the option "output as: JSON - Properties" 
+use the option *output as: JSON - Properties* 
 
 
 ### 4.
 Paste the result as it is 
-into the file named "project.json"
+into the file named *project.json*
 located at
-"data/project.json"
+*data/project.json*
 
 
 ### 5.
@@ -104,7 +104,7 @@ need one of each.
 (look at the demo.json for references)
 
 Types text and subhead will render whatever you type 
-in "content".
+in *content*.
 
 Type image and video would create a static container 
 for the appropiate visual.
@@ -120,11 +120,11 @@ in your project.
 Type iframe injects content from other services. The demo
 shows an embed from datawrapper. Be careful when adding 
 the quote marks to your code. It you might need to tweak
-this "text" with something like this \"text"\ check the demo
+this *text* with something like this \*text*\ check the demo
 for further references. 
 
 Finally type embed is a free html embed. You would need to 
-create a folder in the directory "embeds/" the script would
+create a folder in the directory *embeds/* the script would
 try to find an index.html to be inserted in the main project.
 You can add whatever you want here, but I'll recommend to
 keep it simple and use this option only if you have something 
@@ -139,7 +139,7 @@ This is where you define the name of the asset, the text, the root
 folder of the embed or the iframe code.
 
 Watch out for quote mark conflicts. Check the demo to see how
-to solve the "" vs "/"/ or simply use other mark types like
+to solve the ** vs */*/ or simply use other mark types like
 ' or something else.
 
 
