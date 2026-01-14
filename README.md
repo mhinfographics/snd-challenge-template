@@ -87,7 +87,7 @@ and that's it!
 
 
 
-::::::::::::::::::: CONTENT TYPE
+## CONTENT TYPE
 
 This template takes instructions from fields defined 
 in the data directory using 4 basic instructions per
@@ -152,7 +152,7 @@ An extra line of text that would be included in smaller font size
 after you asset. Use it to add the proper attributions to any 
 visuals you might have in your project.
 
-# License to use this template
+## License to use this template
 
 This template is provided with no warranty, it's free to use and 
 modify by anyone and it's intended to be use for academic purposes only. 
