@@ -11,15 +11,6 @@ set your language:
 or whatever else language your content will be in.
 
 
-Let the bots know about your project, go to the main <b>index.html</b>
-and replace all the instances of "[+username]" with your own 
-github account it should be something like this:
-
-href="https://octocat.github.io/...
-Replacing the default:
-href="https://[+username].github.io/...
-
-
 ## ADDING YOUR CONTENT
 Use the file named "project.json" to add content to your project.
 Find it at "data/project.json"
