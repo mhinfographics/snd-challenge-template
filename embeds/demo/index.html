@@ -20,7 +20,8 @@
     </style>
 </head>
 <body>
-    <div id="container"></div>
+    <div id="container">
+    </div>
 
     <script type="importmap">
         {
@@ -43,7 +44,7 @@
 
             // Camera
             camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-            camera.position.z = 5;
+            camera.position.z = 3;
 
             // Renderer
             const container = document.getElementById('container');
@@ -60,19 +61,17 @@
 
             // Geometry
             const geometries = [
-                new THREE.BoxGeometry(2, 2, 2),
                 new THREE.SphereGeometry(1.5, 32, 32),
-                new THREE.DodecahedronGeometry(1.5),
                 new THREE.IcosahedronGeometry(1.5),
-                new THREE.OctahedronGeometry(1.5),
-                new THREE.TetrahedronGeometry(1.5),
                 new THREE.TorusGeometry(1, 0.4, 16, 100),
                 new THREE.TorusKnotGeometry(1, 0.4, 100, 16)
             ];
             const geometry = geometries[Math.floor(Math.random() * geometries.length)];
 
             // Material
-            const material = new THREE.MeshNormalMaterial();
+            const material = new THREE.MeshNormalMaterial(
+                { wireframe: true }
+            );
 
             // Mesh
             mesh = new THREE.Mesh(geometry, material);

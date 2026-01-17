@@ -202,12 +202,14 @@ function addcontent() {
                         break;
                     case 'video':
                         wrapper = document.createElement('div');
+                        wrapper.classList.add('g-video-wrapper');
                         el = document.createElement('video');
                         el.src = `media/${item.content}`;
                         el.controls = true;
                         el.style.width = '100%';
                         if (item.max_size && item.max_size !== 'body') {
-                            el.style.maxWidth = item.max_size + 'px';
+                            // el.style.maxWidth = item.max_size + 'px';
+                             wrapper.style.maxWidth = item.max_size + 'px';
                         } else if (item.max_size === 'body') {
                             wrapper.className = 'media-size';
                         }
