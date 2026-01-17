@@ -99,6 +99,9 @@ h3{
     max-width: 800px;
     margin: 1rem auto 2rem;
 }
+.g-photo-wrapper{
+    margin: 1rem auto 2rem auto;
+}
 .g-credit{
     color: var(--lighterColor)!important;
     font-size: 13px!important;

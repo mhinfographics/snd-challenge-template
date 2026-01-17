@@ -83,12 +83,14 @@ function addcontent() {
                     case 'photo':
                         wrapper = document.createElement('div');
                         wrapper.classList.add('g-media');
+                        wrapper.classList.add('g-photo-wrapper');
                         el = document.createElement('img');
                         el.src = `images/${item.content}`;
                         el.alt = item.alt || '';
                         el.style.width = '100%';
                         if (item.max_size && item.max_size !== 'body') {
-                            el.style.maxWidth = item.max_size + 'px';
+                            // el.style.maxWidth = item.max_size + 'px';
+                            wrapper.style.maxWidth = item.max_size + 'px';
                         } else if (item.max_size === 'body') {
                             wrapper.classList.add('body-size');
                         }
